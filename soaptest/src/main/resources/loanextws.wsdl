@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://support.diasoft.ru" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="LOANEXTWS"
+             targetNamespace="http://support.diasoft.ru">
+    <types>
+        <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+                    targetNamespace="http://support.diasoft.ru" xmlns:tns="http://support.diasoft.ru">
+            <complexType name="DSCALLRESPONSE">
+                <sequence>
+                    <element name="commandresult" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="DSCALLRESPONSE" type="tns:DSCALLRESPONSE"/>
+            <complexType name="DSCALL">
+                <sequence>
+                    <element name="commandtext" type="xsd:string"/>
+                    <element name="commanddata" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="DSCALL" type="tns:DSCALL"/>
+            <complexType name="DSCALLFAULT">
+                <sequence>
+                    <element name="faultcode" type="xsd:int"/>
+                    <element name="faultmessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="DSCALLFAULT" type="tns:DSCALLFAULT"/>
+            <complexType name="DSCALLASYNC">
+                <sequence>
+                    <element name="commandtext" type="xsd:string"/>
+                    <element name="commanddata" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="DSCALLASYNC" type="tns:DSCALLASYNC"/>
+            <complexType name="DSLnExtFindListAttributeByIDReq">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="Date" type="xsd:dateTime"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="LoanExtContractCoverIDList"
+                             type="tns:LoanExtContractCoverIDListForDSLnExtFindListAttributeByID"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="LoanExtLoanIDList"
+                             type="tns:LoanExtLoanIDListForDSLnExtFindListAttributeByID"/>
+                </sequence>
+            </complexType>
+            <element name="DSLnExtFindListAttributeByIDReq" type="tns:DSLnExtFindListAttributeByIDReq"/>
+            <complexType name="DSLnExtFindListAttributeByIDRes">
+                <sequence>
+                    <element name="Request" type="tns:DSLnExtFindListAttributeByIDReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="LoanExtFindListAttributeList"
+                             type="tns:LoanExtFindListAttributeListForDSLnExtFindListAttributeByID"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="LoanExtInterestRateList"
+                             type="tns:LoanExtInterestRateListForDSLnExtFindListAttributeByID"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="LoanExtTransomesList"
+                             type="tns:LoanExtTransomesListForDSLnExtFindListAttributeByID"/>
+                </sequence>
+            </complexType>
+            <element name="DSLnExtFindListAttributeByIDRes" type="tns:DSLnExtFindListAttributeByIDRes"/>
+            <complexType name="DSLnExtFindListCrPortfInfoReq">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="DateEnd" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="DateStart" type="xsd:dateTime"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="LoanExtCrPortfExtChIDList"
+                             type="tns:LoanExtCrPortfExtChIDListForDSLnExtFindListCrPortfInfo"/>
+                </sequence>
+            </complexType>
+            <element name="DSLnExtFindListCrPortfInfoReq" type="tns:DSLnExtFindListCrPortfInfoReq"/>
+            <complexType name="DSLnExtFindListCrPortfInfoRes">
+                <sequence>
+                    <element name="Request" type="tns:DSLnExtFindListCrPortfInfoReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="LoanExtCrPortfInfoList"
+                             type="tns:LoanExtCrPortfInfoListForDSLnExtFindListCrPortfInfo"/>
+                </sequence>
+            </complexType>
+            <element name="DSLnExtFindListCrPortfInfoRes" type="tns:DSLnExtFindListCrPortfInfoRes"/>
+            <complexType name="DSLnExtMassSaveCrPortfInfoReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="LoanExtCrPortfInfoList"
+                             type="tns:LoanExtCrPortfInfoListForDSLnExtMassSaveCrPortfInfo"/>
+                </sequence>
+            </complexType>
+            <element name="DSLnExtMassSaveCrPortfInfoReq" type="tns:DSLnExtMassSaveCrPortfInfoReq"/>
+            <complexType name="DSLnExtMassSaveCrPortfInfoRes">
+                <sequence>
+                    <element name="Request" type="tns:DSLnExtMassSaveCrPortfInfoReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="DSLnExtMassSaveCrPortfInfoRes" type="tns:DSLnExtMassSaveCrPortfInfoRes"/>
+            <complexType name="LoanExtContractCoverIDListForDSLnExtFindListAttributeByID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="ContractCoverID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="LoanExtContractCoverIDListForDSLnExtFindListAttributeByID"
+                     type="tns:LoanExtContractCoverIDListForDSLnExtFindListAttributeByID"/>
+            <complexType name="LoanExtCrPortfExtChIDListForDSLnExtFindListCrPortfInfo">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="BranchBrief" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ExternalCharID" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="LoanExtCrPortfExtChIDListForDSLnExtFindListCrPortfInfo"
+                     type="tns:LoanExtCrPortfExtChIDListForDSLnExtFindListCrPortfInfo"/>
+            <complexType name="LoanExtCrPortfInfoListForDSLnExtFindListCrPortfInfo">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="BranchBrief" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="Date" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="DateDebtDelay" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="DatePrcDelay" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="DebtDistribFairValue" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="DebtResAmount" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="DebtService" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ExternalCharID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="FactDebtCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="FactOvDebtCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="FactOvDebtPrcCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="FactOvPrcCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="FactPrcCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="FactPrcOvPrcCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="FactUnusedLimitCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="FinPosition" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="LoanAccNum13" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="OvDebtDistribFairValue" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="OvDebtPrcDistribFairValue" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="OvDebtPrcResAmount" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="OvDebtResAmount" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="OvPrcDistribFairValue" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="OvPrcResAmount" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="POSCode" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="PrcOvPrcDistribFairValue" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="PrcOvPrcResAmount" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="PrcResAmount" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="PrcResDistribFairValue" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="QualityBrief" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="RADateDebtDelay" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="RADatePrcDelay" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResDebtAccNum13" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResDebtAccNum20" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResOvDebtAccNum13" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResOvDebtAccNum20" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResOvDebtPrcAccNum13" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResOvDebtPrcAccNum20" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResOvPrcAccNum13" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResOvPrcAccNum20" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResPrcAccNum13" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResPrcAccNum20" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResPrcOvPrcAccNum13" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResPrcOvPrcAccNum20" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResUnusedLimtAccNum13" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResUnusedLimtAccNum20" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="SetDebtCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="SetOvDebtCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="SetOvDebtPrcCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="SetOvPrcCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="SetPrcCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="SetPrcOvPrcCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="SetUnusedLimitCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="UnusedLimDistribFairValue" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="UnusedLimResAmount" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValueDate" type="xsd:dateTime"/>
+                </sequence>
+            </complexType>
+            <element name="LoanExtCrPortfInfoListForDSLnExtFindListCrPortfInfo"
+                     type="tns:LoanExtCrPortfInfoListForDSLnExtFindListCrPortfInfo"/>
+            <complexType name="LoanExtCrPortfInfoListForDSLnExtMassSaveCrPortfInfo">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="BranchBrief" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="Date" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="DateDebtDelay" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="DatePrcDelay" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="DebtDistribFairValue" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="DebtResAmount" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="DebtService" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ExternalCharID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="FactDebtCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="FactOvDebtCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="FactOvDebtPrcCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="FactOvPrcCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="FactPrcCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="FactPrcOvPrcCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="FactUnusedLimitCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="FinPosition" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="LoanAccNum13" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="OvDebtDistribFairValue" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="OvDebtPrcDistribFairValue" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="OvDebtPrcResAmount" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="OvDebtResAmount" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="OvPrcDistribFairValue" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="OvPrcResAmount" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="POSCode" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="PrcOvPrcDistribFairValue" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="PrcOvPrcResAmount" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="PrcResAmount" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="PrcResDistribFairValue" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="QualityBrief" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="RADateDebtDelay" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="RADatePrcDelay" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResDebtAccNum13" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResDebtAccNum20" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResOvDebtAccNum13" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResOvDebtAccNum20" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResOvDebtPrcAccNum13" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResOvDebtPrcAccNum20" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResOvPrcAccNum13" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResOvPrcAccNum20" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResPrcAccNum13" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResPrcAccNum20" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResPrcOvPrcAccNum13" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResPrcOvPrcAccNum20" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResUnusedLimtAccNum13" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ResUnusedLimtAccNum20" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="SetDebtCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="SetOvDebtCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="SetOvDebtPrcCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="SetOvPrcCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="SetPrcCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="SetPrcOvPrcCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="SetUnusedLimitCoefRat" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="UnusedLimDistribFairValue" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="UnusedLimResAmount" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValueDate" type="xsd:dateTime"/>
+                </sequence>
+            </complexType>
+            <element name="LoanExtCrPortfInfoListForDSLnExtMassSaveCrPortfInfo"
+                     type="tns:LoanExtCrPortfInfoListForDSLnExtMassSaveCrPortfInfo"/>
+            <complexType name="LoanExtFindListAttributeListForDSLnExtFindListAttributeByID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="ACCLevelingID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="CalendarDaysRep" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="DaysRepayment" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="InterimPayment" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="LevelingFlag" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="LoanID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="LoanKind" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="MonthlysDebt" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="POS" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="RateTransoms" type="xsd:int"/>
+                </sequence>
+            </complexType>
+            <element name="LoanExtFindListAttributeListForDSLnExtFindListAttributeByID"
+                     type="tns:LoanExtFindListAttributeListForDSLnExtFindListAttributeByID"/>
+            <complexType name="LoanExtInterestRateListForDSLnExtFindListAttributeByID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="CNST" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="Date" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="DateRevision" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="FBD" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="FDT" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="FloatingInterestRateFlag" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="FloatingRateType" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="FrequencyCode" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="FWD" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="INDRate" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="InterestRateType" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="LoanID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="PeriodChangeInterval" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="PeriodChangeType" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="RateToDate" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="Value" type="xsd:double"/>
+                </sequence>
+            </complexType>
+            <element name="LoanExtInterestRateListForDSLnExtFindListAttributeByID"
+                     type="tns:LoanExtInterestRateListForDSLnExtFindListAttributeByID"/>
+            <complexType name="LoanExtLoanIDListForDSLnExtFindListAttributeByID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LoanID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="LoanExtLoanIDListForDSLnExtFindListAttributeByID"
+                     type="tns:LoanExtLoanIDListForDSLnExtFindListAttributeByID"/>
+            <complexType name="LoanExtTransomesListForDSLnExtFindListAttributeByID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="AccNumber" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="AccountID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="LoanID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="Priority" type="xsd:int"/>
+                </sequence>
+            </complexType>
+            <element name="LoanExtTransomesListForDSLnExtFindListAttributeByID"
+                     type="tns:LoanExtTransomesListForDSLnExtFindListAttributeByID"/>
+        </xsd:schema>
+    </types>
+    <message name="DSCALL">
+        <part element="tns:DSCALL" name="request"/>
+    </message>
+    <message name="DSCALLRESPONSE">
+        <part element="tns:DSCALLRESPONSE" name="result"/>
+    </message>
+    <message name="DSCALLFAULT">
+        <part element="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+    </message>
+    <message name="DSCALLASYNC">
+        <part element="tns:DSCALLASYNC" name="request"/>
+    </message>
+    <message name="mDSLnExtFindListAttributeByIDReq">
+        <part element="tns:DSLnExtFindListAttributeByIDReq" name="request"/>
+    </message>
+    <message name="mDSLnExtFindListAttributeByIDRes">
+        <part element="tns:DSLnExtFindListAttributeByIDRes" name="result"/>
+    </message>
+    <message name="mDSLnExtFindListCrPortfInfoReq">
+        <part element="tns:DSLnExtFindListCrPortfInfoReq" name="request"/>
+    </message>
+    <message name="mDSLnExtFindListCrPortfInfoRes">
+        <part element="tns:DSLnExtFindListCrPortfInfoRes" name="result"/>
+    </message>
+    <message name="mDSLnExtMassSaveCrPortfInfoReq">
+        <part element="tns:DSLnExtMassSaveCrPortfInfoReq" name="request"/>
+    </message>
+    <message name="mDSLnExtMassSaveCrPortfInfoRes">
+        <part element="tns:DSLnExtMassSaveCrPortfInfoRes" name="result"/>
+    </message>
+    <portType name="WSPORTTYPE">
+        <operation name="DSCALL">
+            <input message="tns:DSCALL" name="DSCALL"/>
+            <output message="tns:DSCALLRESPONSE" name="DSCALLRESPONSE"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="DSCALLASYNC">
+            <input message="tns:DSCALLASYNC" name="DSCALLASYNC"/>
+        </operation>
+        <operation name="dsLnExtFindListAttributeByID">
+            <input message="tns:mDSLnExtFindListAttributeByIDReq" name="DSLnExtFindListAttributeByIDReq"/>
+            <output message="tns:mDSLnExtFindListAttributeByIDRes" name="DSLnExtFindListAttributeByIDRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsLnExtFindListCrPortfInfo">
+            <input message="tns:mDSLnExtFindListCrPortfInfoReq" name="DSLnExtFindListCrPortfInfoReq"/>
+            <output message="tns:mDSLnExtFindListCrPortfInfoRes" name="DSLnExtFindListCrPortfInfoRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsLnExtMassSaveCrPortfInfo">
+            <input message="tns:mDSLnExtMassSaveCrPortfInfoReq" name="DSLnExtMassSaveCrPortfInfoReq"/>
+            <output message="tns:mDSLnExtMassSaveCrPortfInfoRes" name="DSLnExtMassSaveCrPortfInfoRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+    </portType>
+    <binding name="WSBINDING" type="tns:WSPORTTYPE">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="DSCALL">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="DSCALLASYNC">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+        </operation>
+        <operation name="dsLnExtFindListAttributeByID">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsLnExtFindListCrPortfInfo">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsLnExtMassSaveCrPortfInfo">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="WSSERVICE">
+        <port binding="tns:WSBINDING" name="WSPORT">
+            <soap:address location="WS"/>
+        </port>
+    </service>
+</definitions>

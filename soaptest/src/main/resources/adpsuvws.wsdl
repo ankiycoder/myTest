@@ -1,0 +1,1572 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://support.diasoft.ru" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ADPSUVWS"
+             targetNamespace="http://support.diasoft.ru">
+    <types>
+        <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+                    targetNamespace="http://support.diasoft.ru" xmlns:tns="http://support.diasoft.ru">
+            <complexType name="DSCALLRESPONSE">
+                <sequence>
+                    <element name="commandresult" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="DSCALLRESPONSE" type="tns:DSCALLRESPONSE"/>
+            <complexType name="DSCALL">
+                <sequence>
+                    <element name="commandtext" type="xsd:string"/>
+                    <element name="commanddata" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="DSCALL" type="tns:DSCALL"/>
+            <complexType name="DSCALLFAULT">
+                <sequence>
+                    <element name="faultcode" type="xsd:int"/>
+                    <element name="faultmessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="DSCALLFAULT" type="tns:DSCALLFAULT"/>
+            <complexType name="DSCALLASYNC">
+                <sequence>
+                    <element name="commandtext" type="xsd:string"/>
+                    <element name="commanddata" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="DSCALLASYNC" type="tns:DSCALLASYNC"/>
+            <complexType name="DSIMSACheckListPositionalReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSAccountListIDList"
+                             type="tns:IMSAccountListIDListForDSIMSACheckListPositional"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSACheckListPositionalReq" type="tns:DSIMSACheckListPositionalReq"/>
+            <complexType name="DSIMSACheckListPositionalRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSACheckListPositionalReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSAccountCheckListPositionalList"
+                             type="tns:IMSAccountCheckListPositionalListForDSIMSACheckListPositional"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSAccountNotificationList"
+                             type="tns:IMSAccountNotificationListForDSIMSACheckListPositional"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSACheckListPositionalRes" type="tns:DSIMSACheckListPositionalRes"/>
+            <complexType name="DSIMSPFindIMSFlagByPrmDIDReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolPrmDIDList"
+                             type="tns:IMSProtocolPrmDIDListForDSIMSPFindIMSFlagByPrmDID"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSPFindIMSFlagByPrmDIDReq" type="tns:DSIMSPFindIMSFlagByPrmDIDReq"/>
+            <complexType name="DSIMSPFindIMSFlagByPrmDIDRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSPFindIMSFlagByPrmDIDReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolPrmDFlagList"
+                             type="tns:IMSProtocolPrmDFlagListForDSIMSPFindIMSFlagByPrmDID"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolPrmDIDNotificationList"
+                             type="tns:IMSProtocolPrmDIDNotificationListForDSIMSPFindIMSFlagByPrmDID"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSPFindIMSFlagByPrmDIDRes" type="tns:DSIMSPFindIMSFlagByPrmDIDRes"/>
+            <complexType name="DSIMSPMassInsertReplyReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolMassInsertReplyList"
+                             type="tns:IMSProtocolMassInsertReplyListForDSIMSPMassInsertReply"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSPMassInsertReplyReq" type="tns:DSIMSPMassInsertReplyReq"/>
+            <complexType name="DSIMSPMassInsertReplyRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSPMassInsertReplyReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolLinkIDNotificationList"
+                             type="tns:IMSProtocolLinkIDNotificationListForDSIMSPMassInsertReply"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolLinkIDReplyIDList"
+                             type="tns:IMSProtocolLinkIDReplyIDListForDSIMSPMassInsertReply"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSPMassInsertReplyRes" type="tns:DSIMSPMassInsertReplyRes"/>
+            <complexType name="DSIMSPMassInsertReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolMassInsertList"
+                             type="tns:IMSProtocolMassInsertListForDSIMSPMassInsert"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSPMassInsertReq" type="tns:DSIMSPMassInsertReq"/>
+            <complexType name="DSIMSPMassInsertRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSPMassInsertReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolLinkIDNotificationList"
+                             type="tns:IMSProtocolLinkIDNotificationListForDSIMSPMassInsert"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolLinkIDProtocolIDList"
+                             type="tns:IMSProtocolLinkIDProtocolIDListForDSIMSPMassInsert"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSPMassInsertRes" type="tns:DSIMSPMassInsertRes"/>
+            <complexType name="DSIMSProtocolFindListActionDateByIDReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolIDList"
+                             type="tns:IMSProtocolIDListForDSIMSProtocolFindListActionDateByID"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolFindListActionDateByIDReq" type="tns:DSIMSProtocolFindListActionDateByIDReq"/>
+            <complexType name="DSIMSProtocolFindListActionDateByIDRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSProtocolFindListActionDateByIDReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolFindListActionDateList"
+                             type="tns:IMSProtocolFindListActionDateListForDSIMSProtocolFindListActionDateByID"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolNotificationList"
+                             type="tns:IMSProtocolNotificationListForDSIMSProtocolFindListActionDateByID"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolFindListActionDateByIDRes" type="tns:DSIMSProtocolFindListActionDateByIDRes"/>
+            <complexType name="DSIMSProtocolFindListByIDReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolIDList"
+                             type="tns:IMSProtocolIDListForDSIMSProtocolFindListByID"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolFindListByIDReq" type="tns:DSIMSProtocolFindListByIDReq"/>
+            <complexType name="DSIMSProtocolFindListByIDRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSProtocolFindListByIDReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolFindListByIDList"
+                             type="tns:IMSProtocolFindListByIDListForDSIMSProtocolFindListByID"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolNotificationList"
+                             type="tns:IMSProtocolNotificationListForDSIMSProtocolFindListByID"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolFindListByIDRes" type="tns:DSIMSProtocolFindListByIDRes"/>
+            <complexType name="DSIMSProtocolFindListByObjectGUIDReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolObjectGUIDList"
+                             type="tns:IMSProtocolObjectGUIDListForDSIMSProtocolFindListByObjectGUID"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolFindListByObjectGUIDReq" type="tns:DSIMSProtocolFindListByObjectGUIDReq"/>
+            <complexType name="DSIMSProtocolFindListByObjectGUIDRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSProtocolFindListByObjectGUIDReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolFindListByObjectGUIDList"
+                             type="tns:IMSProtocolFindListByObjectGUIDListForDSIMSProtocolFindListByObjectGUID"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolObjectGUIDNotificationList"
+                             type="tns:IMSProtocolObjectGUIDNotificationListForDSIMSProtocolFindListByObjectGUID"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolFindListByObjectGUIDRes" type="tns:DSIMSProtocolFindListByObjectGUIDRes"/>
+            <complexType name="DSIMSProtocolFindListByObjectIDReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolObjectIDList"
+                             type="tns:IMSProtocolObjectIDListForDSIMSProtocolFindListByObjectID"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolFindListByObjectIDReq" type="tns:DSIMSProtocolFindListByObjectIDReq"/>
+            <complexType name="DSIMSProtocolFindListByObjectIDRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSProtocolFindListByObjectIDReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolFindListByObjectIDList"
+                             type="tns:IMSProtocolFindListByObjectIDListForDSIMSProtocolFindListByObjectID"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolObjectIDNotificationList"
+                             type="tns:IMSProtocolObjectIDNotificationListForDSIMSProtocolFindListByObjectID"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolFindListByObjectIDRes" type="tns:DSIMSProtocolFindListByObjectIDRes"/>
+            <complexType name="DSIMSProtocolFindListExtraAttributeByIDReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolIDList"
+                             type="tns:IMSProtocolIDListForDSIMSProtocolFindListExtraAttributeByID"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolFindListExtraAttributeByIDReq"
+                     type="tns:DSIMSProtocolFindListExtraAttributeByIDReq"/>
+            <complexType name="DSIMSProtocolFindListExtraAttributeByIDRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSProtocolFindListExtraAttributeByIDReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolFindListExtAttributeList"
+                             type="tns:IMSProtocolFindListExtAttributeListForDSIMSProtocolFindListExtraAttributeByID"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolNotificationList"
+                             type="tns:IMSProtocolNotificationListForDSIMSProtocolFindListExtraAttributeByID"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolFindListExtraAttributeByIDRes"
+                     type="tns:DSIMSProtocolFindListExtraAttributeByIDRes"/>
+            <complexType name="DSIMSProtocolFindListForPeriodReq">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="Direction" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="EndDate" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectKind" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ProcessFlag" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="StartDate" type="xsd:dateTime"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolFindListForPeriodReq" type="tns:DSIMSProtocolFindListForPeriodReq"/>
+            <complexType name="DSIMSProtocolFindListForPeriodRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSProtocolFindListForPeriodReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolFindListForPeriodList"
+                             type="tns:IMSProtocolFindListForPeriodListForDSIMSProtocolFindListForPeriod"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolFindListForPeriodRes" type="tns:DSIMSProtocolFindListForPeriodRes"/>
+            <complexType name="DSIMSProtocolFindListSTPExtrAttributeByIDReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolIDList"
+                             type="tns:IMSProtocolIDListForDSIMSProtocolFindListSTPExtrAttributeByID"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolFindListSTPExtrAttributeByIDReq"
+                     type="tns:DSIMSProtocolFindListSTPExtrAttributeByIDReq"/>
+            <complexType name="DSIMSProtocolFindListSTPExtrAttributeByIDRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSProtocolFindListSTPExtrAttributeByIDReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolFindListSTPExtAttributeList"
+                             type="tns:IMSProtocolFindListSTPExtAttributeListForDSIMSProtocolFindListSTPExtrAttributeByID"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolNotificationList"
+                             type="tns:IMSProtocolNotificationListForDSIMSProtocolFindListSTPExtrAttributeByID"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolFindListSTPExtrAttributeByIDRes"
+                     type="tns:DSIMSProtocolFindListSTPExtrAttributeByIDRes"/>
+            <complexType name="DSIMSProtocolMassInsertReplyAccountRestReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolReplyAccountRestList"
+                             type="tns:IMSProtocolReplyAccountRestListForDSIMSProtocolMassInsertReplyAccountRest"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolMassInsertReplyAccountRestReq"
+                     type="tns:DSIMSProtocolMassInsertReplyAccountRestReq"/>
+            <complexType name="DSIMSProtocolMassInsertReplyAccountRestRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSProtocolMassInsertReplyAccountRestReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolLinkIDNotificationList"
+                             type="tns:IMSProtocolLinkIDNotificationListForDSIMSProtocolMassInsertReplyAccountRest"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolLinkIDReplyIDList"
+                             type="tns:IMSProtocolLinkIDReplyIDListForDSIMSProtocolMassInsertReplyAccountRest"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolMassInsertReplyAccountRestRes"
+                     type="tns:DSIMSProtocolMassInsertReplyAccountRestRes"/>
+            <complexType name="DSIMSProtocolMassInsertReplyCnsDocReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolMassInsertReplyCnsDList"
+                             type="tns:IMSProtocolMassInsertReplyCnsDListForDSIMSProtocolMassInsertReplyCnsDoc"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolMassInsertReplyCnsDocReq" type="tns:DSIMSProtocolMassInsertReplyCnsDocReq"/>
+            <complexType name="DSIMSProtocolMassInsertReplyCnsDocRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSProtocolMassInsertReplyCnsDocReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolLinkIDNotificationList"
+                             type="tns:IMSProtocolLinkIDNotificationListForDSIMSProtocolMassInsertReplyCnsDoc"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolLinkIDReplyIDList"
+                             type="tns:IMSProtocolLinkIDReplyIDListForDSIMSProtocolMassInsertReplyCnsDoc"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolMassInsertReplyCnsDocRes" type="tns:DSIMSProtocolMassInsertReplyCnsDocRes"/>
+            <complexType name="DSIMSProtocolMassInsertReplyDocReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolMassInsertReplyDocList"
+                             type="tns:IMSProtocolMassInsertReplyDocListForDSIMSProtocolMassInsertReplyDoc"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolMassInsertReplyDocReq" type="tns:DSIMSProtocolMassInsertReplyDocReq"/>
+            <complexType name="DSIMSProtocolMassInsertReplyDocRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSProtocolMassInsertReplyDocReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolLinkIDNotificationList"
+                             type="tns:IMSProtocolLinkIDNotificationListForDSIMSProtocolMassInsertReplyDoc"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolLinkIDReplyIDList"
+                             type="tns:IMSProtocolLinkIDReplyIDListForDSIMSProtocolMassInsertReplyDoc"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolMassInsertReplyDocRes" type="tns:DSIMSProtocolMassInsertReplyDocRes"/>
+            <complexType name="DSIMSProtocolMassInsertSTPReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolMassInsertSTPList"
+                             type="tns:IMSProtocolMassInsertSTPListForDSIMSProtocolMassInsertSTP"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolSTPExtraAttributeList"
+                             type="tns:IMSProtocolSTPExtraAttributeListForDSIMSProtocolMassInsertSTP"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolMassInsertSTPReq" type="tns:DSIMSProtocolMassInsertSTPReq"/>
+            <complexType name="DSIMSProtocolMassInsertSTPRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSProtocolMassInsertSTPReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolLinkIDNotificationList"
+                             type="tns:IMSProtocolLinkIDNotificationListForDSIMSProtocolMassInsertSTP"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolLinkIDProtocolIDList"
+                             type="tns:IMSProtocolLinkIDProtocolIDListForDSIMSProtocolMassInsertSTP"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolMassInsertSTPRes" type="tns:DSIMSProtocolMassInsertSTPRes"/>
+            <complexType name="DSIMSProtocolMassSaveParticipantReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolMassSaveAddressList"
+                             type="tns:IMSProtocolMassSaveAddressListForDSIMSProtocolMassSaveParticipant"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolMassSaveCodeList"
+                             type="tns:IMSProtocolMassSaveCodeListForDSIMSProtocolMassSaveParticipant"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolMassSaveContactList"
+                             type="tns:IMSProtocolMassSaveContactListForDSIMSProtocolMassSaveParticipant"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolMassSaveICardList"
+                             type="tns:IMSProtocolMassSaveICardListForDSIMSProtocolMassSaveParticipant"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolMassSaveLicenseList"
+                             type="tns:IMSProtocolMassSaveLicenseListForDSIMSProtocolMassSaveParticipant"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolMassSavePartcList"
+                             type="tns:IMSProtocolMassSavePartcListForDSIMSProtocolMassSaveParticipant"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolMassSLeglAltNameList"
+                             type="tns:IMSProtocolMassSLeglAltNameListForDSIMSProtocolMassSaveParticipant"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolMassSPrsAltNameList"
+                             type="tns:IMSProtocolMassSPrsAltNameListForDSIMSProtocolMassSaveParticipant"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolSaveObjectAttributePartcList"
+                             type="tns:IMSProtocolSaveObjectAttributePartcListForDSIMSProtocolMassSaveParticipant"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolMassSaveParticipantReq" type="tns:DSIMSProtocolMassSaveParticipantReq"/>
+            <complexType name="DSIMSProtocolMassSaveParticipantRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSProtocolMassSaveParticipantReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolLinkIDNotificationList"
+                             type="tns:IMSProtocolLinkIDNotificationListForDSIMSProtocolMassSaveParticipant"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolLinkIDProtocolIDList"
+                             type="tns:IMSProtocolLinkIDProtocolIDListForDSIMSProtocolMassSaveParticipant"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolMassSaveParticipantRes" type="tns:DSIMSProtocolMassSaveParticipantRes"/>
+            <complexType name="DSIMSProtocolMassSaveReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolMassSaveList"
+                             type="tns:IMSProtocolMassSaveListForDSIMSProtocolMassSave"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolSaveObjectAttributeList"
+                             type="tns:IMSProtocolSaveObjectAttributeListForDSIMSProtocolMassSave"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolMassSaveReq" type="tns:DSIMSProtocolMassSaveReq"/>
+            <complexType name="DSIMSProtocolMassSaveRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSProtocolMassSaveReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolLinkIDNotificationList"
+                             type="tns:IMSProtocolLinkIDNotificationListForDSIMSProtocolMassSave"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolLinkIDProtocolIDList"
+                             type="tns:IMSProtocolLinkIDProtocolIDListForDSIMSProtocolMassSave"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolMassSaveRes" type="tns:DSIMSProtocolMassSaveRes"/>
+            <complexType name="DSIMSProtocolMassSetProcessFlagReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolIDList"
+                             type="tns:IMSProtocolIDListForDSIMSProtocolMassSetProcessFlag"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolMassSetProcessFlagReq" type="tns:DSIMSProtocolMassSetProcessFlagReq"/>
+            <complexType name="DSIMSProtocolMassSetProcessFlagRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSProtocolMassSetProcessFlagReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolNotificationList"
+                             type="tns:IMSProtocolNotificationListForDSIMSProtocolMassSetProcessFlag"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolMassSetProcessFlagRes" type="tns:DSIMSProtocolMassSetProcessFlagRes"/>
+            <complexType name="DSIMSProtocolMassSetUnProcessFlagReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolIDList"
+                             type="tns:IMSProtocolIDListForDSIMSProtocolMassSetUnProcessFlag"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolMassSetUnProcessFlagReq" type="tns:DSIMSProtocolMassSetUnProcessFlagReq"/>
+            <complexType name="DSIMSProtocolMassSetUnProcessFlagRes">
+                <sequence>
+                    <element name="Request" type="tns:DSIMSProtocolMassSetUnProcessFlagReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="IMSProtocolNotificationList"
+                             type="tns:IMSProtocolNotificationListForDSIMSProtocolMassSetUnProcessFlag"/>
+                </sequence>
+            </complexType>
+            <element name="DSIMSProtocolMassSetUnProcessFlagRes" type="tns:DSIMSProtocolMassSetUnProcessFlagRes"/>
+            <complexType name="IMSAccountCheckListPositionalListForDSIMSACheckListPositional">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSAccountID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="PositionalFlag" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="PositionOwner" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSAccountCheckListPositionalListForDSIMSACheckListPositional"
+                     type="tns:IMSAccountCheckListPositionalListForDSIMSACheckListPositional"/>
+            <complexType name="IMSAccountListIDListForDSIMSACheckListPositional">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSAccountID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSAccountListIDListForDSIMSACheckListPositional"
+                     type="tns:IMSAccountListIDListForDSIMSACheckListPositional"/>
+            <complexType name="IMSAccountNotificationListForDSIMSACheckListPositional">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSAccountID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSAccountNotificationListForDSIMSACheckListPositional"
+                     type="tns:IMSAccountNotificationListForDSIMSACheckListPositional"/>
+            <complexType name="IMSProtocolFindListActionDateListForDSIMSProtocolFindListActionDateByID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="ActionDate" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolFindListActionDateListForDSIMSProtocolFindListActionDateByID"
+                     type="tns:IMSProtocolFindListActionDateListForDSIMSProtocolFindListActionDateByID"/>
+            <complexType name="IMSProtocolFindListByIDListForDSIMSProtocolFindListByID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="ActionDate" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="ActionKind" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="AddresseeKind" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="Message" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="MessageKind" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectGUID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectKind" type="xsd:short"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolFindListByIDListForDSIMSProtocolFindListByID"
+                     type="tns:IMSProtocolFindListByIDListForDSIMSProtocolFindListByID"/>
+            <complexType name="IMSProtocolFindListByObjectGUIDListForDSIMSProtocolFindListByObjectGUID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectGUID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolFindListByObjectGUIDListForDSIMSProtocolFindListByObjectGUID"
+                     type="tns:IMSProtocolFindListByObjectGUIDListForDSIMSProtocolFindListByObjectGUID"/>
+            <complexType name="IMSProtocolFindListByObjectIDListForDSIMSProtocolFindListByObjectID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectGUID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolFindListByObjectIDListForDSIMSProtocolFindListByObjectID"
+                     type="tns:IMSProtocolFindListByObjectIDListForDSIMSProtocolFindListByObjectID"/>
+            <complexType name="IMSProtocolFindListExtAttributeListForDSIMSProtocolFindListExtraAttributeByID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="AttribName" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="AttribValue" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolFindListExtAttributeListForDSIMSProtocolFindListExtraAttributeByID"
+                     type="tns:IMSProtocolFindListExtAttributeListForDSIMSProtocolFindListExtraAttributeByID"/>
+            <complexType name="IMSProtocolFindListForPeriodListForDSIMSProtocolFindListForPeriod">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="AccountID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ActionDate" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="ActionKind" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="AddresseeKind" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="Message" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="MessageKind" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectKind" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="Priority" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ReplyKind" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ReplyStatus" type="xsd:short"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolFindListForPeriodListForDSIMSProtocolFindListForPeriod"
+                     type="tns:IMSProtocolFindListForPeriodListForDSIMSProtocolFindListForPeriod"/>
+            <complexType name="IMSProtocolFindListSTPExtAttributeListForDSIMSProtocolFindListSTPExtrAttributeByID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="AttribName" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValDate" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValFloat" type="xsd:double"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValIdentifier" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValInteger" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValString" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolFindListSTPExtAttributeListForDSIMSProtocolFindListSTPExtrAttributeByID"
+                     type="tns:IMSProtocolFindListSTPExtAttributeListForDSIMSProtocolFindListSTPExtrAttributeByID"/>
+            <complexType name="IMSProtocolIDListForDSIMSProtocolFindListActionDateByID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolIDListForDSIMSProtocolFindListActionDateByID"
+                     type="tns:IMSProtocolIDListForDSIMSProtocolFindListActionDateByID"/>
+            <complexType name="IMSProtocolIDListForDSIMSProtocolFindListByID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolIDListForDSIMSProtocolFindListByID"
+                     type="tns:IMSProtocolIDListForDSIMSProtocolFindListByID"/>
+            <complexType name="IMSProtocolIDListForDSIMSProtocolFindListExtraAttributeByID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolIDListForDSIMSProtocolFindListExtraAttributeByID"
+                     type="tns:IMSProtocolIDListForDSIMSProtocolFindListExtraAttributeByID"/>
+            <complexType name="IMSProtocolIDListForDSIMSProtocolFindListSTPExtrAttributeByID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolIDListForDSIMSProtocolFindListSTPExtrAttributeByID"
+                     type="tns:IMSProtocolIDListForDSIMSProtocolFindListSTPExtrAttributeByID"/>
+            <complexType name="IMSProtocolIDListForDSIMSProtocolMassSetProcessFlag">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolIDListForDSIMSProtocolMassSetProcessFlag"
+                     type="tns:IMSProtocolIDListForDSIMSProtocolMassSetProcessFlag"/>
+            <complexType name="IMSProtocolIDListForDSIMSProtocolMassSetUnProcessFlag">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolIDListForDSIMSProtocolMassSetUnProcessFlag"
+                     type="tns:IMSProtocolIDListForDSIMSProtocolMassSetUnProcessFlag"/>
+            <complexType name="IMSProtocolLinkIDNotificationListForDSIMSPMassInsert">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolLinkIDNotificationListForDSIMSPMassInsert"
+                     type="tns:IMSProtocolLinkIDNotificationListForDSIMSPMassInsert"/>
+            <complexType name="IMSProtocolLinkIDNotificationListForDSIMSPMassInsertReply">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolLinkIDNotificationListForDSIMSPMassInsertReply"
+                     type="tns:IMSProtocolLinkIDNotificationListForDSIMSPMassInsertReply"/>
+            <complexType name="IMSProtocolLinkIDNotificationListForDSIMSProtocolMassInsertReplyAccountRest">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolLinkIDNotificationListForDSIMSProtocolMassInsertReplyAccountRest"
+                     type="tns:IMSProtocolLinkIDNotificationListForDSIMSProtocolMassInsertReplyAccountRest"/>
+            <complexType name="IMSProtocolLinkIDNotificationListForDSIMSProtocolMassInsertReplyCnsDoc">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolLinkIDNotificationListForDSIMSProtocolMassInsertReplyCnsDoc"
+                     type="tns:IMSProtocolLinkIDNotificationListForDSIMSProtocolMassInsertReplyCnsDoc"/>
+            <complexType name="IMSProtocolLinkIDNotificationListForDSIMSProtocolMassInsertReplyDoc">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolLinkIDNotificationListForDSIMSProtocolMassInsertReplyDoc"
+                     type="tns:IMSProtocolLinkIDNotificationListForDSIMSProtocolMassInsertReplyDoc"/>
+            <complexType name="IMSProtocolLinkIDNotificationListForDSIMSProtocolMassInsertSTP">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolLinkIDNotificationListForDSIMSProtocolMassInsertSTP"
+                     type="tns:IMSProtocolLinkIDNotificationListForDSIMSProtocolMassInsertSTP"/>
+            <complexType name="IMSProtocolLinkIDNotificationListForDSIMSProtocolMassSave">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolLinkIDNotificationListForDSIMSProtocolMassSave"
+                     type="tns:IMSProtocolLinkIDNotificationListForDSIMSProtocolMassSave"/>
+            <complexType name="IMSProtocolLinkIDNotificationListForDSIMSProtocolMassSaveParticipant">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolLinkIDNotificationListForDSIMSProtocolMassSaveParticipant"
+                     type="tns:IMSProtocolLinkIDNotificationListForDSIMSProtocolMassSaveParticipant"/>
+            <complexType name="IMSProtocolLinkIDProtocolIDListForDSIMSPMassInsert">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolLinkIDProtocolIDListForDSIMSPMassInsert"
+                     type="tns:IMSProtocolLinkIDProtocolIDListForDSIMSPMassInsert"/>
+            <complexType name="IMSProtocolLinkIDProtocolIDListForDSIMSProtocolMassInsertSTP">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolLinkIDProtocolIDListForDSIMSProtocolMassInsertSTP"
+                     type="tns:IMSProtocolLinkIDProtocolIDListForDSIMSProtocolMassInsertSTP"/>
+            <complexType name="IMSProtocolLinkIDProtocolIDListForDSIMSProtocolMassSave">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolLinkIDProtocolIDListForDSIMSProtocolMassSave"
+                     type="tns:IMSProtocolLinkIDProtocolIDListForDSIMSProtocolMassSave"/>
+            <complexType name="IMSProtocolLinkIDProtocolIDListForDSIMSProtocolMassSaveParticipant">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolLinkIDProtocolIDListForDSIMSProtocolMassSaveParticipant"
+                     type="tns:IMSProtocolLinkIDProtocolIDListForDSIMSProtocolMassSaveParticipant"/>
+            <complexType name="IMSProtocolLinkIDReplyIDListForDSIMSPMassInsertReply">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ReplyID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolLinkIDReplyIDListForDSIMSPMassInsertReply"
+                     type="tns:IMSProtocolLinkIDReplyIDListForDSIMSPMassInsertReply"/>
+            <complexType name="IMSProtocolLinkIDReplyIDListForDSIMSProtocolMassInsertReplyAccountRest">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ReplyID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolLinkIDReplyIDListForDSIMSProtocolMassInsertReplyAccountRest"
+                     type="tns:IMSProtocolLinkIDReplyIDListForDSIMSProtocolMassInsertReplyAccountRest"/>
+            <complexType name="IMSProtocolLinkIDReplyIDListForDSIMSProtocolMassInsertReplyCnsDoc">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ReplyID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolLinkIDReplyIDListForDSIMSProtocolMassInsertReplyCnsDoc"
+                     type="tns:IMSProtocolLinkIDReplyIDListForDSIMSProtocolMassInsertReplyCnsDoc"/>
+            <complexType name="IMSProtocolLinkIDReplyIDListForDSIMSProtocolMassInsertReplyDoc">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ReplyID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolLinkIDReplyIDListForDSIMSProtocolMassInsertReplyDoc"
+                     type="tns:IMSProtocolLinkIDReplyIDListForDSIMSProtocolMassInsertReplyDoc"/>
+            <complexType name="IMSProtocolMassInsertListForDSIMSPMassInsert">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="ActionDate" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="ActionKind" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ExternalSystemName" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectGUID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectKind" type="xsd:short"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolMassInsertListForDSIMSPMassInsert"
+                     type="tns:IMSProtocolMassInsertListForDSIMSPMassInsert"/>
+            <complexType name="IMSProtocolMassInsertReplyCnsDListForDSIMSProtocolMassInsertReplyCnsDoc">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="CreditAccountNumber" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectGUID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ReplyKind" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ReplyStatus" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ReplyText" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="StateChangeFlag" type="xsd:short"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolMassInsertReplyCnsDListForDSIMSProtocolMassInsertReplyCnsDoc"
+                     type="tns:IMSProtocolMassInsertReplyCnsDListForDSIMSProtocolMassInsertReplyCnsDoc"/>
+            <complexType name="IMSProtocolMassInsertReplyDocListForDSIMSProtocolMassInsertReplyDoc">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="CreditAccountNumber" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectGUID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ReplyKind" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ReplyStatus" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ReplyText" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="StateChangeFlag" type="xsd:short"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolMassInsertReplyDocListForDSIMSProtocolMassInsertReplyDoc"
+                     type="tns:IMSProtocolMassInsertReplyDocListForDSIMSProtocolMassInsertReplyDoc"/>
+            <complexType name="IMSProtocolMassInsertReplyListForDSIMSPMassInsertReply">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectGUID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ReplyKind" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ReplyStatus" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ReplyText" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolMassInsertReplyListForDSIMSPMassInsertReply"
+                     type="tns:IMSProtocolMassInsertReplyListForDSIMSPMassInsertReply"/>
+            <complexType name="IMSProtocolMassInsertSTPListForDSIMSProtocolMassInsertSTP">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="ExternalSystemName" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="STPActionDate" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="STPActionKind" type="xsd:short"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolMassInsertSTPListForDSIMSProtocolMassInsertSTP"
+                     type="tns:IMSProtocolMassInsertSTPListForDSIMSProtocolMassInsertSTP"/>
+            <complexType name="IMSProtocolMassSLeglAltNameListForDSIMSProtocolMassSaveParticipant">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="AlterNameKind" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="AlterNameKindDeleteFlag" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="LegalAlterName" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolMassSLeglAltNameListForDSIMSProtocolMassSaveParticipant"
+                     type="tns:IMSProtocolMassSLeglAltNameListForDSIMSProtocolMassSaveParticipant"/>
+            <complexType name="IMSProtocolMassSPrsAltNameListForDSIMSProtocolMassSaveParticipant">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="AlterNameKind" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="AlterNameKindDeleteFlag" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="PersonFullName" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="PersonLastName" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="PersonName" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="PersonPatronimicName" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolMassSPrsAltNameListForDSIMSProtocolMassSaveParticipant"
+                     type="tns:IMSProtocolMassSPrsAltNameListForDSIMSProtocolMassSaveParticipant"/>
+            <complexType name="IMSProtocolMassSaveAddressListForDSIMSProtocolMassSaveParticipant">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="ActiveFlag" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="AddressKind" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="BaseAddressFlag" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="City" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="CountryCodeISO" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="Flat" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="Frame" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="House" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="Name" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="PostIndex" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="Street" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="Town" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolMassSaveAddressListForDSIMSProtocolMassSaveParticipant"
+                     type="tns:IMSProtocolMassSaveAddressListForDSIMSProtocolMassSaveParticipant"/>
+            <complexType name="IMSProtocolMassSaveCodeListForDSIMSProtocolMassSaveParticipant">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="CodeKind" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="CodeKindDeleteFlag" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="CodeValue" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="DefaultFlag" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolMassSaveCodeListForDSIMSProtocolMassSaveParticipant"
+                     type="tns:IMSProtocolMassSaveCodeListForDSIMSProtocolMassSaveParticipant"/>
+            <complexType name="IMSProtocolMassSaveContactListForDSIMSProtocolMassSaveParticipant">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="ContactKind" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ContactValue" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="FlDead" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolMassSaveContactListForDSIMSProtocolMassSaveParticipant"
+                     type="tns:IMSProtocolMassSaveContactListForDSIMSProtocolMassSaveParticipant"/>
+            <complexType name="IMSProtocolMassSaveICardListForDSIMSProtocolMassSaveParticipant">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="CodePasspDepartment" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="DateOfIssue" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="DateRegEnd" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="DocKind" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="FlDead" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="FLMain" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="RegDepartment" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="RegNumber" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="RegSeries" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolMassSaveICardListForDSIMSProtocolMassSaveParticipant"
+                     type="tns:IMSProtocolMassSaveICardListForDSIMSProtocolMassSaveParticipant"/>
+            <complexType name="IMSProtocolMassSaveLicenseListForDSIMSProtocolMassSaveParticipant">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LicenseDepartment" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="LicenseEndDate" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="LicenseListDeleteFlag" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="LicenseNumber" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="LicenseRevokeDate" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="LicenseStartDate" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="LicenseType" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolMassSaveLicenseListForDSIMSProtocolMassSaveParticipant"
+                     type="tns:IMSProtocolMassSaveLicenseListForDSIMSProtocolMassSaveParticipant"/>
+            <complexType name="IMSProtocolMassSaveListForDSIMSProtocolMassSave">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="ActionDate" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="ActionKind" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ExternalSystemName" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectGUID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectKind" type="xsd:short"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolMassSaveListForDSIMSProtocolMassSave"
+                     type="tns:IMSProtocolMassSaveListForDSIMSProtocolMassSave"/>
+            <complexType name="IMSProtocolMassSavePartcListForDSIMSProtocolMassSaveParticipant">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="ActionDate" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="ActionKind" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ExternalSystemName" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectGUID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectKind" type="xsd:short"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolMassSavePartcListForDSIMSProtocolMassSaveParticipant"
+                     type="tns:IMSProtocolMassSavePartcListForDSIMSProtocolMassSaveParticipant"/>
+            <complexType name="IMSProtocolNotificationListForDSIMSProtocolFindListActionDateByID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolNotificationListForDSIMSProtocolFindListActionDateByID"
+                     type="tns:IMSProtocolNotificationListForDSIMSProtocolFindListActionDateByID"/>
+            <complexType name="IMSProtocolNotificationListForDSIMSProtocolFindListByID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolNotificationListForDSIMSProtocolFindListByID"
+                     type="tns:IMSProtocolNotificationListForDSIMSProtocolFindListByID"/>
+            <complexType name="IMSProtocolNotificationListForDSIMSProtocolFindListExtraAttributeByID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolNotificationListForDSIMSProtocolFindListExtraAttributeByID"
+                     type="tns:IMSProtocolNotificationListForDSIMSProtocolFindListExtraAttributeByID"/>
+            <complexType name="IMSProtocolNotificationListForDSIMSProtocolFindListSTPExtrAttributeByID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolNotificationListForDSIMSProtocolFindListSTPExtrAttributeByID"
+                     type="tns:IMSProtocolNotificationListForDSIMSProtocolFindListSTPExtrAttributeByID"/>
+            <complexType name="IMSProtocolNotificationListForDSIMSProtocolMassSetProcessFlag">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolNotificationListForDSIMSProtocolMassSetProcessFlag"
+                     type="tns:IMSProtocolNotificationListForDSIMSProtocolMassSetProcessFlag"/>
+            <complexType name="IMSProtocolNotificationListForDSIMSProtocolMassSetUnProcessFlag">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolNotificationListForDSIMSProtocolMassSetUnProcessFlag"
+                     type="tns:IMSProtocolNotificationListForDSIMSProtocolMassSetUnProcessFlag"/>
+            <complexType name="IMSProtocolObjectGUIDListForDSIMSProtocolFindListByObjectGUID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectGUID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectKind" type="xsd:short"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolObjectGUIDListForDSIMSProtocolFindListByObjectGUID"
+                     type="tns:IMSProtocolObjectGUIDListForDSIMSProtocolFindListByObjectGUID"/>
+            <complexType name="IMSProtocolObjectGUIDNotificationListForDSIMSProtocolFindListByObjectGUID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectGUID" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolObjectGUIDNotificationListForDSIMSProtocolFindListByObjectGUID"
+                     type="tns:IMSProtocolObjectGUIDNotificationListForDSIMSProtocolFindListByObjectGUID"/>
+            <complexType name="IMSProtocolObjectIDListForDSIMSProtocolFindListByObjectID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectKind" type="xsd:short"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolObjectIDListForDSIMSProtocolFindListByObjectID"
+                     type="tns:IMSProtocolObjectIDListForDSIMSProtocolFindListByObjectID"/>
+            <complexType name="IMSProtocolObjectIDNotificationListForDSIMSProtocolFindListByObjectID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolObjectIDNotificationListForDSIMSProtocolFindListByObjectID"
+                     type="tns:IMSProtocolObjectIDNotificationListForDSIMSProtocolFindListByObjectID"/>
+            <complexType name="IMSProtocolPrmDFlagListForDSIMSPFindIMSFlagByPrmDID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSConfirmed" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProcessed" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="IMSRejected" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="IMSRevoked" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="IMSUnloaded" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="PrimaryDocumentID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolPrmDFlagListForDSIMSPFindIMSFlagByPrmDID"
+                     type="tns:IMSProtocolPrmDFlagListForDSIMSPFindIMSFlagByPrmDID"/>
+            <complexType name="IMSProtocolPrmDIDListForDSIMSPFindIMSFlagByPrmDID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="PrimaryDocumentID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolPrmDIDListForDSIMSPFindIMSFlagByPrmDID"
+                     type="tns:IMSProtocolPrmDIDListForDSIMSPFindIMSFlagByPrmDID"/>
+            <complexType name="IMSProtocolPrmDIDNotificationListForDSIMSPFindIMSFlagByPrmDID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="PrimaryDocumentID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolPrmDIDNotificationListForDSIMSPFindIMSFlagByPrmDID"
+                     type="tns:IMSProtocolPrmDIDNotificationListForDSIMSPFindIMSFlagByPrmDID"/>
+            <complexType name="IMSProtocolReplyAccountRestListForDSIMSProtocolMassInsertReplyAccountRest">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="IMSProtocolID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NullAmountFlag" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ReplyStatus" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ReplyText" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="RestAmount" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="RestDate" type="xsd:dateTime"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolReplyAccountRestListForDSIMSProtocolMassInsertReplyAccountRest"
+                     type="tns:IMSProtocolReplyAccountRestListForDSIMSProtocolMassInsertReplyAccountRest"/>
+            <complexType name="IMSProtocolSTPExtraAttributeListForDSIMSProtocolMassInsertSTP">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="AttribName" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValDate" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValFloat" type="xsd:double"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValIdentifier" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValInteger" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValString" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolSTPExtraAttributeListForDSIMSProtocolMassInsertSTP"
+                     type="tns:IMSProtocolSTPExtraAttributeListForDSIMSProtocolMassInsertSTP"/>
+            <complexType name="IMSProtocolSaveObjectAttributeListForDSIMSProtocolMassSave">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="AttribName" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValAmount" type="xsd:decimal"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValDate" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValFloat" type="xsd:double"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValIdentifier" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValInteger" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValString" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValText" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolSaveObjectAttributeListForDSIMSProtocolMassSave"
+                     type="tns:IMSProtocolSaveObjectAttributeListForDSIMSProtocolMassSave"/>
+            <complexType name="IMSProtocolSaveObjectAttributePartcListForDSIMSProtocolMassSaveParticipant">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="AttribName" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValDate" type="xsd:dateTime"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValFloat" type="xsd:double"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValIdentifier" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValInteger" type="xsd:int"/>
+                    <element maxOccurs="1" minOccurs="0" name="ValString" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="IMSProtocolSaveObjectAttributePartcListForDSIMSProtocolMassSaveParticipant"
+                     type="tns:IMSProtocolSaveObjectAttributePartcListForDSIMSProtocolMassSaveParticipant"/>
+        </xsd:schema>
+    </types>
+    <message name="DSCALL">
+        <part element="tns:DSCALL" name="request"/>
+    </message>
+    <message name="DSCALLRESPONSE">
+        <part element="tns:DSCALLRESPONSE" name="result"/>
+    </message>
+    <message name="DSCALLFAULT">
+        <part element="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+    </message>
+    <message name="DSCALLASYNC">
+        <part element="tns:DSCALLASYNC" name="request"/>
+    </message>
+    <message name="mDSIMSACheckListPositionalReq">
+        <part element="tns:DSIMSACheckListPositionalReq" name="request"/>
+    </message>
+    <message name="mDSIMSACheckListPositionalRes">
+        <part element="tns:DSIMSACheckListPositionalRes" name="result"/>
+    </message>
+    <message name="mDSIMSPFindIMSFlagByPrmDIDReq">
+        <part element="tns:DSIMSPFindIMSFlagByPrmDIDReq" name="request"/>
+    </message>
+    <message name="mDSIMSPFindIMSFlagByPrmDIDRes">
+        <part element="tns:DSIMSPFindIMSFlagByPrmDIDRes" name="result"/>
+    </message>
+    <message name="mDSIMSPMassInsertReq">
+        <part element="tns:DSIMSPMassInsertReq" name="request"/>
+    </message>
+    <message name="mDSIMSPMassInsertRes">
+        <part element="tns:DSIMSPMassInsertRes" name="result"/>
+    </message>
+    <message name="mDSIMSPMassInsertReplyReq">
+        <part element="tns:DSIMSPMassInsertReplyReq" name="request"/>
+    </message>
+    <message name="mDSIMSPMassInsertReplyRes">
+        <part element="tns:DSIMSPMassInsertReplyRes" name="result"/>
+    </message>
+    <message name="mDSIMSProtocolFindListActionDateByIDReq">
+        <part element="tns:DSIMSProtocolFindListActionDateByIDReq" name="request"/>
+    </message>
+    <message name="mDSIMSProtocolFindListActionDateByIDRes">
+        <part element="tns:DSIMSProtocolFindListActionDateByIDRes" name="result"/>
+    </message>
+    <message name="mDSIMSProtocolFindListByIDReq">
+        <part element="tns:DSIMSProtocolFindListByIDReq" name="request"/>
+    </message>
+    <message name="mDSIMSProtocolFindListByIDRes">
+        <part element="tns:DSIMSProtocolFindListByIDRes" name="result"/>
+    </message>
+    <message name="mDSIMSProtocolFindListByObjectGUIDReq">
+        <part element="tns:DSIMSProtocolFindListByObjectGUIDReq" name="request"/>
+    </message>
+    <message name="mDSIMSProtocolFindListByObjectGUIDRes">
+        <part element="tns:DSIMSProtocolFindListByObjectGUIDRes" name="result"/>
+    </message>
+    <message name="mDSIMSProtocolFindListByObjectIDReq">
+        <part element="tns:DSIMSProtocolFindListByObjectIDReq" name="request"/>
+    </message>
+    <message name="mDSIMSProtocolFindListByObjectIDRes">
+        <part element="tns:DSIMSProtocolFindListByObjectIDRes" name="result"/>
+    </message>
+    <message name="mDSIMSProtocolFindListExtraAttributeByIDReq">
+        <part element="tns:DSIMSProtocolFindListExtraAttributeByIDReq" name="request"/>
+    </message>
+    <message name="mDSIMSProtocolFindListExtraAttributeByIDRes">
+        <part element="tns:DSIMSProtocolFindListExtraAttributeByIDRes" name="result"/>
+    </message>
+    <message name="mDSIMSProtocolFindListForPeriodReq">
+        <part element="tns:DSIMSProtocolFindListForPeriodReq" name="request"/>
+    </message>
+    <message name="mDSIMSProtocolFindListForPeriodRes">
+        <part element="tns:DSIMSProtocolFindListForPeriodRes" name="result"/>
+    </message>
+    <message name="mDSIMSProtocolFindListSTPExtrAttributeByIDReq">
+        <part element="tns:DSIMSProtocolFindListSTPExtrAttributeByIDReq" name="request"/>
+    </message>
+    <message name="mDSIMSProtocolFindListSTPExtrAttributeByIDRes">
+        <part element="tns:DSIMSProtocolFindListSTPExtrAttributeByIDRes" name="result"/>
+    </message>
+    <message name="mDSIMSProtocolMassInsertReplyAccountRestReq">
+        <part element="tns:DSIMSProtocolMassInsertReplyAccountRestReq" name="request"/>
+    </message>
+    <message name="mDSIMSProtocolMassInsertReplyAccountRestRes">
+        <part element="tns:DSIMSProtocolMassInsertReplyAccountRestRes" name="result"/>
+    </message>
+    <message name="mDSIMSProtocolMassInsertReplyCnsDocReq">
+        <part element="tns:DSIMSProtocolMassInsertReplyCnsDocReq" name="request"/>
+    </message>
+    <message name="mDSIMSProtocolMassInsertReplyCnsDocRes">
+        <part element="tns:DSIMSProtocolMassInsertReplyCnsDocRes" name="result"/>
+    </message>
+    <message name="mDSIMSProtocolMassInsertReplyDocReq">
+        <part element="tns:DSIMSProtocolMassInsertReplyDocReq" name="request"/>
+    </message>
+    <message name="mDSIMSProtocolMassInsertReplyDocRes">
+        <part element="tns:DSIMSProtocolMassInsertReplyDocRes" name="result"/>
+    </message>
+    <message name="mDSIMSProtocolMassInsertSTPReq">
+        <part element="tns:DSIMSProtocolMassInsertSTPReq" name="request"/>
+    </message>
+    <message name="mDSIMSProtocolMassInsertSTPRes">
+        <part element="tns:DSIMSProtocolMassInsertSTPRes" name="result"/>
+    </message>
+    <message name="mDSIMSProtocolMassSaveReq">
+        <part element="tns:DSIMSProtocolMassSaveReq" name="request"/>
+    </message>
+    <message name="mDSIMSProtocolMassSaveRes">
+        <part element="tns:DSIMSProtocolMassSaveRes" name="result"/>
+    </message>
+    <message name="mDSIMSProtocolMassSaveParticipantReq">
+        <part element="tns:DSIMSProtocolMassSaveParticipantReq" name="request"/>
+    </message>
+    <message name="mDSIMSProtocolMassSaveParticipantRes">
+        <part element="tns:DSIMSProtocolMassSaveParticipantRes" name="result"/>
+    </message>
+    <message name="mDSIMSProtocolMassSetProcessFlagReq">
+        <part element="tns:DSIMSProtocolMassSetProcessFlagReq" name="request"/>
+    </message>
+    <message name="mDSIMSProtocolMassSetProcessFlagRes">
+        <part element="tns:DSIMSProtocolMassSetProcessFlagRes" name="result"/>
+    </message>
+    <message name="mDSIMSProtocolMassSetUnProcessFlagReq">
+        <part element="tns:DSIMSProtocolMassSetUnProcessFlagReq" name="request"/>
+    </message>
+    <message name="mDSIMSProtocolMassSetUnProcessFlagRes">
+        <part element="tns:DSIMSProtocolMassSetUnProcessFlagRes" name="result"/>
+    </message>
+    <portType name="WSPORTTYPE">
+        <operation name="DSCALL">
+            <input message="tns:DSCALL" name="DSCALL"/>
+            <output message="tns:DSCALLRESPONSE" name="DSCALLRESPONSE"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="DSCALLASYNC">
+            <input message="tns:DSCALLASYNC" name="DSCALLASYNC"/>
+        </operation>
+        <operation name="dsIMSACheckListPositional">
+            <input message="tns:mDSIMSACheckListPositionalReq" name="DSIMSACheckListPositionalReq"/>
+            <output message="tns:mDSIMSACheckListPositionalRes" name="DSIMSACheckListPositionalRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsIMSPFindIMSFlagByPrmDID">
+            <input message="tns:mDSIMSPFindIMSFlagByPrmDIDReq" name="DSIMSPFindIMSFlagByPrmDIDReq"/>
+            <output message="tns:mDSIMSPFindIMSFlagByPrmDIDRes" name="DSIMSPFindIMSFlagByPrmDIDRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsIMSPMassInsert">
+            <input message="tns:mDSIMSPMassInsertReq" name="DSIMSPMassInsertReq"/>
+            <output message="tns:mDSIMSPMassInsertRes" name="DSIMSPMassInsertRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsIMSPMassInsertReply">
+            <input message="tns:mDSIMSPMassInsertReplyReq" name="DSIMSPMassInsertReplyReq"/>
+            <output message="tns:mDSIMSPMassInsertReplyRes" name="DSIMSPMassInsertReplyRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsIMSProtocolFindListActionDateByID">
+            <input message="tns:mDSIMSProtocolFindListActionDateByIDReq" name="DSIMSProtocolFindListActionDateByIDReq"/>
+            <output message="tns:mDSIMSProtocolFindListActionDateByIDRes"
+                    name="DSIMSProtocolFindListActionDateByIDRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsIMSProtocolFindListByID">
+            <input message="tns:mDSIMSProtocolFindListByIDReq" name="DSIMSProtocolFindListByIDReq"/>
+            <output message="tns:mDSIMSProtocolFindListByIDRes" name="DSIMSProtocolFindListByIDRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsIMSProtocolFindListByObjectGUID">
+            <input message="tns:mDSIMSProtocolFindListByObjectGUIDReq" name="DSIMSProtocolFindListByObjectGUIDReq"/>
+            <output message="tns:mDSIMSProtocolFindListByObjectGUIDRes" name="DSIMSProtocolFindListByObjectGUIDRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsIMSProtocolFindListByObjectID">
+            <input message="tns:mDSIMSProtocolFindListByObjectIDReq" name="DSIMSProtocolFindListByObjectIDReq"/>
+            <output message="tns:mDSIMSProtocolFindListByObjectIDRes" name="DSIMSProtocolFindListByObjectIDRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsIMSProtocolFindListExtraAttributeByID">
+            <input message="tns:mDSIMSProtocolFindListExtraAttributeByIDReq"
+                   name="DSIMSProtocolFindListExtraAttributeByIDReq"/>
+            <output message="tns:mDSIMSProtocolFindListExtraAttributeByIDRes"
+                    name="DSIMSProtocolFindListExtraAttributeByIDRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsIMSProtocolFindListForPeriod">
+            <input message="tns:mDSIMSProtocolFindListForPeriodReq" name="DSIMSProtocolFindListForPeriodReq"/>
+            <output message="tns:mDSIMSProtocolFindListForPeriodRes" name="DSIMSProtocolFindListForPeriodRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsIMSProtocolFindListSTPExtrAttributeByID">
+            <input message="tns:mDSIMSProtocolFindListSTPExtrAttributeByIDReq"
+                   name="DSIMSProtocolFindListSTPExtrAttributeByIDReq"/>
+            <output message="tns:mDSIMSProtocolFindListSTPExtrAttributeByIDRes"
+                    name="DSIMSProtocolFindListSTPExtrAttributeByIDRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsIMSProtocolMassInsertReplyAccountRest">
+            <input message="tns:mDSIMSProtocolMassInsertReplyAccountRestReq"
+                   name="DSIMSProtocolMassInsertReplyAccountRestReq"/>
+            <output message="tns:mDSIMSProtocolMassInsertReplyAccountRestRes"
+                    name="DSIMSProtocolMassInsertReplyAccountRestRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsIMSProtocolMassInsertReplyCnsDoc">
+            <input message="tns:mDSIMSProtocolMassInsertReplyCnsDocReq" name="DSIMSProtocolMassInsertReplyCnsDocReq"/>
+            <output message="tns:mDSIMSProtocolMassInsertReplyCnsDocRes" name="DSIMSProtocolMassInsertReplyCnsDocRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsIMSProtocolMassInsertReplyDoc">
+            <input message="tns:mDSIMSProtocolMassInsertReplyDocReq" name="DSIMSProtocolMassInsertReplyDocReq"/>
+            <output message="tns:mDSIMSProtocolMassInsertReplyDocRes" name="DSIMSProtocolMassInsertReplyDocRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsIMSProtocolMassInsertSTP">
+            <input message="tns:mDSIMSProtocolMassInsertSTPReq" name="DSIMSProtocolMassInsertSTPReq"/>
+            <output message="tns:mDSIMSProtocolMassInsertSTPRes" name="DSIMSProtocolMassInsertSTPRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsIMSProtocolMassSave">
+            <input message="tns:mDSIMSProtocolMassSaveReq" name="DSIMSProtocolMassSaveReq"/>
+            <output message="tns:mDSIMSProtocolMassSaveRes" name="DSIMSProtocolMassSaveRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsIMSProtocolMassSaveParticipant">
+            <input message="tns:mDSIMSProtocolMassSaveParticipantReq" name="DSIMSProtocolMassSaveParticipantReq"/>
+            <output message="tns:mDSIMSProtocolMassSaveParticipantRes" name="DSIMSProtocolMassSaveParticipantRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsIMSProtocolMassSetProcessFlag">
+            <input message="tns:mDSIMSProtocolMassSetProcessFlagReq" name="DSIMSProtocolMassSetProcessFlagReq"/>
+            <output message="tns:mDSIMSProtocolMassSetProcessFlagRes" name="DSIMSProtocolMassSetProcessFlagRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsIMSProtocolMassSetUnProcessFlag">
+            <input message="tns:mDSIMSProtocolMassSetUnProcessFlagReq" name="DSIMSProtocolMassSetUnProcessFlagReq"/>
+            <output message="tns:mDSIMSProtocolMassSetUnProcessFlagRes" name="DSIMSProtocolMassSetUnProcessFlagRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+    </portType>
+    <binding name="WSBINDING" type="tns:WSPORTTYPE">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="DSCALL">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="DSCALLASYNC">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+        </operation>
+        <operation name="dsIMSACheckListPositional">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsIMSPFindIMSFlagByPrmDID">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsIMSPMassInsert">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsIMSPMassInsertReply">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsIMSProtocolFindListActionDateByID">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsIMSProtocolFindListByID">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsIMSProtocolFindListByObjectGUID">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsIMSProtocolFindListByObjectID">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsIMSProtocolFindListExtraAttributeByID">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsIMSProtocolFindListForPeriod">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsIMSProtocolFindListSTPExtrAttributeByID">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsIMSProtocolMassInsertReplyAccountRest">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsIMSProtocolMassInsertReplyCnsDoc">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsIMSProtocolMassInsertReplyDoc">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsIMSProtocolMassInsertSTP">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsIMSProtocolMassSave">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsIMSProtocolMassSaveParticipant">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsIMSProtocolMassSetProcessFlag">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsIMSProtocolMassSetUnProcessFlag">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="WSSERVICE">
+        <port binding="tns:WSBINDING" name="WSPORT">
+            <soap:address location="WS"/>
+        </port>
+    </service>
+</definitions>

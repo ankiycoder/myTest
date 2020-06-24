@@ -1,0 +1,1 @@
+docker build --tag=registry.diasoft.ru:5000/wstest .

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <appender name="Console"
+              class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+        </encoder>
+    </appender>
+    <appender name="File"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>./rosbank-gldataservice.log</file>
+        <rollingPolicy
+                class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>./rosbank-gldataservice.%d{yyyy-MM-dd}.log
+            </fileNamePattern>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{ISO8601} [%-5p][%-10.10t][%34.34c] - %m%n</pattern>
+            <charset>cp1251</charset>
+        </encoder>
+    </appender>
+    <root level="info">
+        <appender-ref ref="Console"/>
+    </root>
+    <logger name="socgen.rosbank.integration" level="trace" additivity="false">
+        <appender-ref ref="Console"/>
+        <appender-ref ref="File"/>
+    </logger>
+</configuration>

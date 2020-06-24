@@ -1,0 +1,1 @@
+docker push registry.diasoft.ru:5000/wstest

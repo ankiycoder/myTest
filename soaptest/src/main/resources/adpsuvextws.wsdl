@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+             xmlns:tns="http://support.diasoft.ru" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="ADPSUVEXTWS"
+             targetNamespace="http://support.diasoft.ru">
+    <types>
+        <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified"
+                    targetNamespace="http://support.diasoft.ru" xmlns:tns="http://support.diasoft.ru">
+            <complexType name="DSCALLRESPONSE">
+                <sequence>
+                    <element name="commandresult" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="DSCALLRESPONSE" type="tns:DSCALLRESPONSE"/>
+            <complexType name="DSCALL">
+                <sequence>
+                    <element name="commandtext" type="xsd:string"/>
+                    <element name="commanddata" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="DSCALL" type="tns:DSCALL"/>
+            <complexType name="DSCALLFAULT">
+                <sequence>
+                    <element name="faultcode" type="xsd:int"/>
+                    <element name="faultmessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="DSCALLFAULT" type="tns:DSCALLFAULT"/>
+            <complexType name="DSCALLASYNC">
+                <sequence>
+                    <element name="commandtext" type="xsd:string"/>
+                    <element name="commanddata" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="DSCALLASYNC" type="tns:DSCALLASYNC"/>
+            <complexType name="DSExtraIMSPFindListByEIMSPIDReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="ExtraIMSPExtraIMSPIDList"
+                             type="tns:ExtraIMSPExtraIMSPIDListForDSExtraIMSPFindListByEIMSPID"/>
+                </sequence>
+            </complexType>
+            <element name="DSExtraIMSPFindListByEIMSPIDReq" type="tns:DSExtraIMSPFindListByEIMSPIDReq"/>
+            <complexType name="DSExtraIMSPFindListByEIMSPIDRes">
+                <sequence>
+                    <element name="Request" type="tns:DSExtraIMSPFindListByEIMSPIDReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="ExtraIMSPFindListByEIMSPIDList"
+                             type="tns:ExtraIMSPFindListByEIMSPIDListForDSExtraIMSPFindListByEIMSPID"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="ExtraIMSPNotificationList"
+                             type="tns:ExtraIMSPNotificationListForDSExtraIMSPFindListByEIMSPID"/>
+                </sequence>
+            </complexType>
+            <element name="DSExtraIMSPFindListByEIMSPIDRes" type="tns:DSExtraIMSPFindListByEIMSPIDRes"/>
+            <complexType name="DSORSFindLisOnetByObjectIDReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="ObjectRelationShipFindListByIDList"
+                             type="tns:ObjectRelationShipFindListByIDListForDSORSFindLisOnetByObjectID"/>
+                </sequence>
+            </complexType>
+            <element name="DSORSFindLisOnetByObjectIDReq" type="tns:DSORSFindLisOnetByObjectIDReq"/>
+            <complexType name="DSORSFindLisOnetByObjectIDRes">
+                <sequence>
+                    <element name="Request" type="tns:DSORSFindLisOnetByObjectIDReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="ObjectRelationShipFindListByManyIDList"
+                             type="tns:ObjectRelationShipFindListByManyIDListForDSORSFindLisOnetByObjectID"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="ObjectRelationShipFindListORelationList"
+                             type="tns:ObjectRelationShipFindListORelationListForDSORSFindLisOnetByObjectID"/>
+                    <element maxOccurs="unbounded" minOccurs="0"
+                             name="ObjectRelationShipNotificationFindListByOneIDList"
+                             type="tns:ObjectRelationShipNotificationFindListByOneIDListForDSORSFindLisOnetByObjectID"/>
+                </sequence>
+            </complexType>
+            <element name="DSORSFindLisOnetByObjectIDRes" type="tns:DSORSFindLisOnetByObjectIDRes"/>
+            <complexType name="DSORSOneMassInsertReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="ObjectRelationShipOneMassInsertList"
+                             type="tns:ObjectRelationShipOneMassInsertListForDSORSOneMassInsert"/>
+                </sequence>
+            </complexType>
+            <element name="DSORSOneMassInsertReq" type="tns:DSORSOneMassInsertReq"/>
+            <complexType name="DSORSOneMassInsertRes">
+                <sequence>
+                    <element name="Request" type="tns:DSORSOneMassInsertReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="ObjectRelationShipNotificationOneMassInsertList"
+                             type="tns:ObjectRelationShipNotificationOneMassInsertListForDSORSOneMassInsert"/>
+                </sequence>
+            </complexType>
+            <element name="DSORSOneMassInsertRes" type="tns:DSORSOneMassInsertRes"/>
+            <complexType name="DSObjectRelationShipFndLsManytByRelIDReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="ObjectRelationShipFindListByManyIDList"
+                             type="tns:ObjectRelationShipFindListByManyIDListForDSObjectRelationShipFndLsManytByRelID"/>
+                </sequence>
+            </complexType>
+            <element name="DSObjectRelationShipFndLsManytByRelIDReq"
+                     type="tns:DSObjectRelationShipFndLsManytByRelIDReq"/>
+            <complexType name="DSObjectRelationShipFndLsManytByRelIDRes">
+                <sequence>
+                    <element name="Request" type="tns:DSObjectRelationShipFndLsManytByRelIDReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="ObjectRelationShipFindListMObjectIDList"
+                             type="tns:ObjectRelationShipFindListMObjectIDListForDSObjectRelationShipFndLsManytByRelID"/>
+                    <element maxOccurs="unbounded" minOccurs="0"
+                             name="ObjectRelationShipNotificationFindListByManIDList"
+                             type="tns:ObjectRelationShipNotificationFindListByManIDListForDSObjectRelationShipFndLsManytByRelID"/>
+                </sequence>
+            </complexType>
+            <element name="DSObjectRelationShipFndLsManytByRelIDRes"
+                     type="tns:DSObjectRelationShipFndLsManytByRelIDRes"/>
+            <complexType name="DSObjectRelationShipManyMassInsertReq">
+                <sequence>
+                    <element maxOccurs="unbounded" minOccurs="0" name="ObjectRelationShipManyMassInsertList"
+                             type="tns:ObjectRelationShipManyMassInsertListForDSObjectRelationShipManyMassInsert"/>
+                </sequence>
+            </complexType>
+            <element name="DSObjectRelationShipManyMassInsertReq" type="tns:DSObjectRelationShipManyMassInsertReq"/>
+            <complexType name="DSObjectRelationShipManyMassInsertRes">
+                <sequence>
+                    <element name="Request" type="tns:DSObjectRelationShipManyMassInsertReq"/>
+                    <element name="ReturnCode" type="xsd:int"/>
+                    <element name="ReturnStatus" type="xsd:string"/>
+                    <element name="ReturnMsg" type="xsd:string"/>
+                    <element maxOccurs="unbounded" minOccurs="0" name="ObjectRelationShipNotificationManyMassInsertList"
+                             type="tns:ObjectRelationShipNotificationManyMassInsertListForDSObjectRelationShipManyMassInsert"/>
+                </sequence>
+            </complexType>
+            <element name="DSObjectRelationShipManyMassInsertRes" type="tns:DSObjectRelationShipManyMassInsertRes"/>
+            <complexType name="ExtraIMSPExtraIMSPIDListForDSExtraIMSPFindListByEIMSPID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="ExtraIMSPID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="ExtraIMSPExtraIMSPIDListForDSExtraIMSPFindListByEIMSPID"
+                     type="tns:ExtraIMSPExtraIMSPIDListForDSExtraIMSPFindListByEIMSPID"/>
+            <complexType name="ExtraIMSPFindListByEIMSPIDListForDSExtraIMSPFindListByEIMSPID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="ExternalObjectID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ExtraIMSPID" type="xsd:long"/>
+                </sequence>
+            </complexType>
+            <element name="ExtraIMSPFindListByEIMSPIDListForDSExtraIMSPFindListByEIMSPID"
+                     type="tns:ExtraIMSPFindListByEIMSPIDListForDSExtraIMSPFindListByEIMSPID"/>
+            <complexType name="ExtraIMSPNotificationListForDSExtraIMSPFindListByEIMSPID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="ExtraIMSPID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="ExtraIMSPNotificationListForDSExtraIMSPFindListByEIMSPID"
+                     type="tns:ExtraIMSPNotificationListForDSExtraIMSPFindListByEIMSPID"/>
+            <complexType name="ObjectRelationShipFindListByIDListForDSORSFindLisOnetByObjectID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="BranchID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="DepartmentID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectKind" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ORelObjectID" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="ObjectRelationShipFindListByIDListForDSORSFindLisOnetByObjectID"
+                     type="tns:ObjectRelationShipFindListByIDListForDSORSFindLisOnetByObjectID"/>
+            <complexType name="ObjectRelationShipFindListByManyIDListForDSORSFindLisOnetByObjectID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="BranchID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="DepartmentID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="MRelObjectID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectKind" type="xsd:short"/>
+                </sequence>
+            </complexType>
+            <element name="ObjectRelationShipFindListByManyIDListForDSORSFindLisOnetByObjectID"
+                     type="tns:ObjectRelationShipFindListByManyIDListForDSORSFindLisOnetByObjectID"/>
+            <complexType name="ObjectRelationShipFindListByManyIDListForDSObjectRelationShipFndLsManytByRelID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="BranchID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="DepartmentID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="MRelObjectID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectKind" type="xsd:short"/>
+                </sequence>
+            </complexType>
+            <element name="ObjectRelationShipFindListByManyIDListForDSObjectRelationShipFndLsManytByRelID"
+                     type="tns:ObjectRelationShipFindListByManyIDListForDSObjectRelationShipFndLsManytByRelID"/>
+            <complexType name="ObjectRelationShipFindListMObjectIDListForDSObjectRelationShipFndLsManytByRelID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectKind" type="xsd:short"/>
+                </sequence>
+            </complexType>
+            <element name="ObjectRelationShipFindListMObjectIDListForDSObjectRelationShipFndLsManytByRelID"
+                     type="tns:ObjectRelationShipFindListMObjectIDListForDSObjectRelationShipFndLsManytByRelID"/>
+            <complexType name="ObjectRelationShipFindListORelationListForDSORSFindLisOnetByObjectID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectKind" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ORelObjectID" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="ObjectRelationShipFindListORelationListForDSORSFindLisOnetByObjectID"
+                     type="tns:ObjectRelationShipFindListORelationListForDSORSFindLisOnetByObjectID"/>
+            <complexType name="ObjectRelationShipManyMassInsertListForDSObjectRelationShipManyMassInsert">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="BranchID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="DepartmentID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="MRelObjectID" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectKind" type="xsd:short"/>
+                </sequence>
+            </complexType>
+            <element name="ObjectRelationShipManyMassInsertListForDSObjectRelationShipManyMassInsert"
+                     type="tns:ObjectRelationShipManyMassInsertListForDSObjectRelationShipManyMassInsert"/>
+            <complexType
+                    name="ObjectRelationShipNotificationFindListByManIDListForDSObjectRelationShipFndLsManytByRelID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="ObjectRelationShipNotificationFindListByManIDListForDSObjectRelationShipFndLsManytByRelID"
+                     type="tns:ObjectRelationShipNotificationFindListByManIDListForDSObjectRelationShipFndLsManytByRelID"/>
+            <complexType name="ObjectRelationShipNotificationFindListByOneIDListForDSORSFindLisOnetByObjectID">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="ObjectRelationShipNotificationFindListByOneIDListForDSORSFindLisOnetByObjectID"
+                     type="tns:ObjectRelationShipNotificationFindListByOneIDListForDSORSFindLisOnetByObjectID"/>
+            <complexType name="ObjectRelationShipNotificationManyMassInsertListForDSObjectRelationShipManyMassInsert">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="LinkID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="ObjectRelationShipNotificationManyMassInsertListForDSObjectRelationShipManyMassInsert"
+                     type="tns:ObjectRelationShipNotificationManyMassInsertListForDSObjectRelationShipManyMassInsert"/>
+            <complexType name="ObjectRelationShipNotificationOneMassInsertListForDSORSOneMassInsert">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="NTFID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="NTFMessage" type="xsd:string"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectKind" type="xsd:short"/>
+                </sequence>
+            </complexType>
+            <element name="ObjectRelationShipNotificationOneMassInsertListForDSORSOneMassInsert"
+                     type="tns:ObjectRelationShipNotificationOneMassInsertListForDSORSOneMassInsert"/>
+            <complexType name="ObjectRelationShipOneMassInsertListForDSORSOneMassInsert">
+                <sequence>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectID" type="xsd:long"/>
+                    <element maxOccurs="1" minOccurs="0" name="ObjectKind" type="xsd:short"/>
+                    <element maxOccurs="1" minOccurs="0" name="ORelObjectID" type="xsd:string"/>
+                </sequence>
+            </complexType>
+            <element name="ObjectRelationShipOneMassInsertListForDSORSOneMassInsert"
+                     type="tns:ObjectRelationShipOneMassInsertListForDSORSOneMassInsert"/>
+        </xsd:schema>
+    </types>
+    <message name="DSCALL">
+        <part element="tns:DSCALL" name="request"/>
+    </message>
+    <message name="DSCALLRESPONSE">
+        <part element="tns:DSCALLRESPONSE" name="result"/>
+    </message>
+    <message name="DSCALLFAULT">
+        <part element="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+    </message>
+    <message name="DSCALLASYNC">
+        <part element="tns:DSCALLASYNC" name="request"/>
+    </message>
+    <message name="mDSExtraIMSPFindListByEIMSPIDReq">
+        <part element="tns:DSExtraIMSPFindListByEIMSPIDReq" name="request"/>
+    </message>
+    <message name="mDSExtraIMSPFindListByEIMSPIDRes">
+        <part element="tns:DSExtraIMSPFindListByEIMSPIDRes" name="result"/>
+    </message>
+    <message name="mDSObjectRelationShipFndLsManytByRelIDReq">
+        <part element="tns:DSObjectRelationShipFndLsManytByRelIDReq" name="request"/>
+    </message>
+    <message name="mDSObjectRelationShipFndLsManytByRelIDRes">
+        <part element="tns:DSObjectRelationShipFndLsManytByRelIDRes" name="result"/>
+    </message>
+    <message name="mDSObjectRelationShipManyMassInsertReq">
+        <part element="tns:DSObjectRelationShipManyMassInsertReq" name="request"/>
+    </message>
+    <message name="mDSObjectRelationShipManyMassInsertRes">
+        <part element="tns:DSObjectRelationShipManyMassInsertRes" name="result"/>
+    </message>
+    <message name="mDSORSFindLisOnetByObjectIDReq">
+        <part element="tns:DSORSFindLisOnetByObjectIDReq" name="request"/>
+    </message>
+    <message name="mDSORSFindLisOnetByObjectIDRes">
+        <part element="tns:DSORSFindLisOnetByObjectIDRes" name="result"/>
+    </message>
+    <message name="mDSORSOneMassInsertReq">
+        <part element="tns:DSORSOneMassInsertReq" name="request"/>
+    </message>
+    <message name="mDSORSOneMassInsertRes">
+        <part element="tns:DSORSOneMassInsertRes" name="result"/>
+    </message>
+    <portType name="WSPORTTYPE">
+        <operation name="DSCALL">
+            <input message="tns:DSCALL" name="DSCALL"/>
+            <output message="tns:DSCALLRESPONSE" name="DSCALLRESPONSE"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="DSCALLASYNC">
+            <input message="tns:DSCALLASYNC" name="DSCALLASYNC"/>
+        </operation>
+        <operation name="dsExtraIMSPFindListByEIMSPID">
+            <input message="tns:mDSExtraIMSPFindListByEIMSPIDReq" name="DSExtraIMSPFindListByEIMSPIDReq"/>
+            <output message="tns:mDSExtraIMSPFindListByEIMSPIDRes" name="DSExtraIMSPFindListByEIMSPIDRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsObjectRelationShipFndLsManytByRelID">
+            <input message="tns:mDSObjectRelationShipFndLsManytByRelIDReq"
+                   name="DSObjectRelationShipFndLsManytByRelIDReq"/>
+            <output message="tns:mDSObjectRelationShipFndLsManytByRelIDRes"
+                    name="DSObjectRelationShipFndLsManytByRelIDRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsObjectRelationShipManyMassInsert">
+            <input message="tns:mDSObjectRelationShipManyMassInsertReq" name="DSObjectRelationShipManyMassInsertReq"/>
+            <output message="tns:mDSObjectRelationShipManyMassInsertRes" name="DSObjectRelationShipManyMassInsertRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsORSFindLisOnetByObjectID">
+            <input message="tns:mDSORSFindLisOnetByObjectIDReq" name="DSORSFindLisOnetByObjectIDReq"/>
+            <output message="tns:mDSORSFindLisOnetByObjectIDRes" name="DSORSFindLisOnetByObjectIDRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+        <operation name="dsORSOneMassInsert">
+            <input message="tns:mDSORSOneMassInsertReq" name="DSORSOneMassInsertReq"/>
+            <output message="tns:mDSORSOneMassInsertRes" name="DSORSOneMassInsertRes"/>
+            <fault message="tns:DSCALLFAULT" name="DSCALLFAULT"/>
+        </operation>
+    </portType>
+    <binding name="WSBINDING" type="tns:WSPORTTYPE">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="DSCALL">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="DSCALLASYNC">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+        </operation>
+        <operation name="dsExtraIMSPFindListByEIMSPID">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsObjectRelationShipFndLsManytByRelID">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsObjectRelationShipManyMassInsert">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsORSFindLisOnetByObjectID">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="dsORSOneMassInsert">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="DSCALLFAULT">
+                <soap:fault name="DSCALLFAULT" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+    <service name="WSSERVICE">
+        <port binding="tns:WSBINDING" name="WSPORT">
+            <soap:address location="WS"/>
+        </port>
+    </service>
+</definitions>
